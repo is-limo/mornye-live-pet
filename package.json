@@ -1,0 +1,52 @@
+{
+  "name": "mornye-live-pet",
+  "version": "0.1.8",
+  "description": "莫宁桌宠：抖音直播弹幕、帮打排队与 OpenCode Go DeepSeek 气泡回复",
+  "main": "app/main.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dev:sim": "electron . --simulate-live --offline-ai",
+    "test": "node --test",
+    "check": "node scripts/check.js",
+    "mock:danmaku": "node scripts/mock-douyin-server.js",
+    "probe:ai": "node scripts/probe-opencode.js",
+    "verify": "npm run check && npm test",
+    "dist:win": "npm run verify && electron-builder --win portable --x64",
+    "package:friend": "node scripts/build-friend-package.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "electron": "^43.4.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.mornye.livepet",
+    "productName": "莫宁桌宠",
+    "asar": true,
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "app/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "Mornye-Live-Pet-${version}-${arch}.${ext}"
+    }
+  }
+}

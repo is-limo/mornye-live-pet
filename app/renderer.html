@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>莫宁桌宠</title>
+  <link rel="stylesheet" href="renderer.css">
+</head>
+<body>
+  <main id="stage" aria-label="莫宁桌宠">
+    <section id="bubble" class="bubble" aria-live="polite" aria-atomic="true">
+      <div class="bubble-orbit" aria-hidden="true"></div>
+      <div id="bubbleTitle" class="bubble-title">莫宁</div>
+      <p id="bubbleText" class="bubble-text"></p>
+      <div class="bubble-footer">
+        <span id="bubbleKind">LIVE RESPONSE</span>
+        <span class="bubble-star" aria-hidden="true">✦</span>
+      </div>
+    </section>
+
+    <div id="petArea" class="pet-area">
+      <button id="petButton" class="pet-button" type="button" aria-label="莫宁；固定在桌面右下角，右键打开菜单">
+        <img id="petImage" src="assets/mornye-pet.png" alt="莫宁桌宠" draggable="false">
+        <span id="statusDot" class="status-dot" aria-label="直播连接状态"></span>
+      </button>
+    </div>
+
+    <section id="menu" class="menu" aria-label="莫宁桌宠设置与直播队列" hidden>
+      <header class="menu-head">
+        <div>
+          <strong>莫宁 · 直播桌宠</strong>
+          <small>OpenCode Go / DeepSeek</small>
+        </div>
+        <button id="menuClose" class="icon-button" type="button" aria-label="关闭菜单">×</button>
+      </header>
+      <div id="menuBody" class="menu-body"></div>
+    </section>
+  </main>
+  <script src="lines.js"></script>
+  <script src="hit-mask.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
