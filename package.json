@@ -18,7 +18,7 @@
     "package:friend": "node scripts/build-friend-package.js"
   },
   "dependencies": {
-    "ws": "^8.18.3"
+    "ws": "^8.22.0"
   },
   "devDependencies": {
     "electron": "^43.4.1",
